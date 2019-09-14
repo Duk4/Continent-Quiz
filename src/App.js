@@ -1,9 +1,10 @@
 import React from 'react';
+import ContinentQuiz from './components/ContinentQuiz';
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="app">
+      <ContinentQuiz />
     </div>
   );
 }
