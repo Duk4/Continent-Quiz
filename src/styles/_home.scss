@@ -1,0 +1,64 @@
+.home {
+    width: 90%;
+    height: 100%;
+    margin: auto auto;
+    position: relative;
+    font-size: 2rem;
+}
+
+.home-btns {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.home-icon {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0 0.5rem 0 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    background: blue;
+}
+
+.home-icon:hover{
+    cursor: pointer;
+}
+
+.play-btn {
+    flex-basis: 0;
+    flex-grow: 2;
+    padding: 0.5rem;
+    border: 2px solid green;
+    border-radius: 1rem;
+    color: green;
+    background: white;
+}
+
+.play-btn:hover {
+    color: white;
+    background: green;
+    border: none;
+    cursor: pointer;
+}
+
+.category{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.play-btn span {
+    font-size: 1.5rem;
+}
+
+.home-btns > div {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0 0 0 0.5rem;
+    padding: 0.5rem;
+}

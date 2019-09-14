@@ -1,0 +1,35 @@
+.place {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.place-number {
+    flex-basis: 0;
+    flex-grow: 1;
+    border: 2px solid green;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.points {
+    flex-basis: 0;
+    flex-grow: 6;
+    display: block;
+}
+
+.date {
+    font-size: 1rem;
+    color: grey;
+    opacity: .8;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.points-scored {
+    color: #000000;
+    opacity: .6;
+    text-align: left;
+    margin-left: 1rem;
+    font-weight: bold;
+}
