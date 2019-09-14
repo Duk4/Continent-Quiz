@@ -1,0 +1,19 @@
+.quiz {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    position: relative;
+}
+
+.next-btn {
+    text-align: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 35%;
+    width: 30%;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    background: green;
+    padding: 0.5rem 1rem;
+}

@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 @import url('../styles/_home.scss');
 @import url('../styles/_leaderboard-place.scss');
+@import url('../styles/_quiz.scss');
+@import url('../styles/_question.scss');
+@import url('../styles/_option.scss');
 @import url('../styles/_reset.scss');
 
 * {
@@ -22,9 +25,11 @@ body {
 }
 
 h3 {
+    width: 90%;
     color: grey;
     text-align: left;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    font-size: 2rem;
 }
 
 h4 {
@@ -34,4 +39,8 @@ h4 {
 
 button:focus {
     outline: 0;
+}
+
+span {
+    font-size: 1.5rem;
 }

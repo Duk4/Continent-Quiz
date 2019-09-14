@@ -7,7 +7,7 @@ import Reset from './Reset';
 class ContinentQuiz extends React.Component {
     render() {
         return (
-            <Reset />
+            <Quiz />
         );
     }
 }
