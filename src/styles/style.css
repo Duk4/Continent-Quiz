@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 @import url("../styles/_home.scss");
 @import url("../styles/_leaderboard-place.scss");
+@import url("../styles/_reset.scss");
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +25,11 @@ h3 {
   color: grey;
   text-align: left;
   margin-bottom: 1rem;
+}
+
+h4 {
+  color: grey;
+  font-size: 2rem;
 }
 
 button:focus {
