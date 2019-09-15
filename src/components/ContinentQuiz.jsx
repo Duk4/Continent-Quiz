@@ -10,12 +10,12 @@ class ContinentQuiz extends React.Component {
 
         this.state = {
             data: [],
-            game: null,
+            game: true,
             quiz: {
                 questions: [],
                 currentQuestion: 1,
                 score: 0,
-                showScore: false
+                showScore: true
             },
             highScore: [
                 { score: 2000, date: (new Date()) },
@@ -46,8 +46,23 @@ class ContinentQuiz extends React.Component {
         this.setState({ game });
     };
 
+    handleGameFinish = (score) => {
+        const lastScore = { date: new Date(), score };
+
+        this.setState(state => ({
+            game: null,
+            showScore: false,
+            highScore:
+                (_.take(
+                    _.reverse(
+                        _.sortBy([...state.highScore, lastScore], 'score')
+                    ), 3
+                ))
+        }))
+    }
+
     render() {
-        const { game, highScore, fetchError, quiz } = this.state;
+        const { game, highScore, fetchError, quiz, data } = this.state;
 
         if (game === null) {
             return (
@@ -57,16 +72,37 @@ class ContinentQuiz extends React.Component {
                     onGameStart={this.handleGameStart}
                 />
             );
+        } else if (quiz.showScore === false) {
+            return (
+                <Quiz
+                    game={game}
+                    data={data}
+                    quiz={quiz}
+                />
+            );
+        } else if (quiz.showScore === true) {
+            return (
+                <Reset
+                    quiz={quiz}
+                    onFinish={this.handleGameFinish}
+                />
+            )
         }
-
-        return (
-            <Quiz
-                game={game}
-                quiz={quiz}
-                onFinish={this.handleGameFinish}
-            />
-        );
     }
 };
 
 export default ContinentQuiz;
+
+// const continents = _.uniq(_.sortBy(_.map(this.state.data, 'continent')));
+// const choices = _.sampleSize(continents, 3);
+// const correctAnswer = _.random(3);
+
+// const QUESTION_COUNT = 5;
+// for (let i = 0; i < QUESTION_COUNT; i++) {
+
+//     this.state.quiz.questions.push({
+//         options: choices,
+//         correct: correctAnswer,
+//         image: _.sample(_.filter(this.state.data, { continent: choices[correctAnswer] })).image
+//     });
+// }
