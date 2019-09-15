@@ -10,12 +10,12 @@ class ContinentQuiz extends React.Component {
 
         this.state = {
             data: [],
-            game: true,
+            game: null,
             quiz: {
                 questions: [],
                 currentQuestion: 1,
                 score: 0,
-                showScore: true
+                showScore: false
             },
             highScore: [
                 { score: 2000, date: (new Date()) },
@@ -51,7 +51,10 @@ class ContinentQuiz extends React.Component {
 
         this.setState(state => ({
             game: null,
+            questions: [],
+            currentQuestion: 1,
             showScore: false,
+            score: 0,
             highScore:
                 (_.take(
                     _.reverse(
