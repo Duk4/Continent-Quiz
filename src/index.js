@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ContinentQuiz from './components/ContinentQuiz';
 import './styles/style.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ContinentQuiz />, document.getElementById('root'));
