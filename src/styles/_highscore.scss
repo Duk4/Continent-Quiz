@@ -1,4 +1,6 @@
 .place {
+    width: 90%;
+    margin: 1rem auto;
     display: flex;
     font-size: 1.5rem;
     font-weight: bold;
@@ -7,6 +9,7 @@
 .place-number {
     flex-basis: 0;
     flex-grow: 1;
+    color: green;
     border: 2px solid green;
     border-radius: 1rem;
     padding: 0.5rem;

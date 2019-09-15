@@ -1,16 +1,17 @@
 .home {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
     position: relative;
     font-size: 2rem;
 }
 
 .home-btns {
     position: absolute;
-    bottom: 1rem;
+    bottom: 1.5rem;
+    left: 5%;
+    margin: 0 auto;
     display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: space-between;
     font-weight: bold;
 }
@@ -43,7 +44,6 @@
 .play-btn:hover {
     color: white;
     background: green;
-    border: none;
     cursor: pointer;
 }
 

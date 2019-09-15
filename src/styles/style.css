@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 @import url("../styles/_home.scss");
-@import url("../styles/_leaderboard-place.scss");
+@import url("../styles/_highscore.scss");
 @import url("../styles/_quiz.scss");
 @import url("../styles/_question.scss");
 @import url("../styles/_option.scss");
