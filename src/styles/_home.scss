@@ -1,6 +1,10 @@
+$green: #088c50;
+$blue: #0050a5;
+$white: #fff;
+
 .home {
     width: 100%;
-    height: 100vh;
+    height: 97vh;
     position: relative;
     font-size: 2rem;
 }
@@ -23,8 +27,8 @@
     padding: 0.5rem;
     border: none;
     border-radius: 1rem;
-    color: white;
-    background: blue;
+    color: $white;
+    background: $blue;
 }
 
 .home-icon:hover{
@@ -35,15 +39,15 @@
     flex-basis: 0;
     flex-grow: 2;
     padding: 0.5rem;
-    border: 2px solid green;
+    border: 2px solid $green;
     border-radius: 1rem;
-    color: green;
-    background: white;
+    color: $green;
+    background: $white;
 }
 
 .play-btn:hover {
-    color: white;
-    background: green;
+    color: $white;
+    background: $green;
     cursor: pointer;
 }
 

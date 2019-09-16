@@ -1,3 +1,6 @@
+$grey: #989898;
+$green: #088c50;
+
 .place {
     width: 90%;
     margin: 1rem auto;
@@ -9,8 +12,8 @@
 .place-number {
     flex-basis: 0;
     flex-grow: 1;
-    color: green;
-    border: 2px solid green;
+    color: $green;
+    border: 2px solid $green;
     border-radius: 1rem;
     padding: 0.7rem;
     font-weight: bold;
@@ -24,7 +27,7 @@
 
 .date {
     font-size: 1.2rem;
-    color: grey;
+    color: $grey;
     opacity: .8;
     text-align: left;
     margin-left: 1rem;

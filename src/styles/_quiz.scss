@@ -1,3 +1,6 @@
+$white: #fff;
+$green: #088c50;
+
 .quiz {
     width: 100%;
     height: 100%;
@@ -5,11 +8,11 @@
 }
 
 .next-btn {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     text-align: center;
     border: none;
     border-radius: 1rem;
-    color: white;
-    background: green;
+    color: $white;
+    background: $green;
     padding: 0.5rem 1rem;
 }

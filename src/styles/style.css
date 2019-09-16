@@ -21,16 +21,29 @@ body {
   background: #fff;
 }
 
+.app {
+  height: 100vh;
+}
+
+h5 {
+  width: 90%;
+  text-align: left;
+  margin: 0 auto;
+  color: #909090;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 h3 {
   width: 90%;
-  color: grey;
+  color: #909090;
   text-align: left;
   margin: 0 auto 1rem auto;
   font-size: 2rem;
 }
 
 h4 {
-  color: grey;
+  color: #909090;
   font-size: 2rem;
 }
 

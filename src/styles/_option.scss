@@ -1,12 +1,17 @@
+$orange: #feb63d;
+$red: #d44f39;
+$white: #fff;
+$green: #088c50;
+
 .option {
     display: flex;
     width: 80%;
     margin: 0.5rem auto;
     padding: 0.5rem 1rem;
-    border: 2px solid orange;
+    border: 2px solid $orange;
     border-radius: 1rem;
-    color: orange;
-    background: white;
+    color: $orange;
+    background: $white;
     text-align: left;
     justify-content: space-between;
 }
@@ -25,10 +30,10 @@
 }
 
 .selected {
-    background: orange;
-    color: white;
+    background: $orange;
+    color: $white;
     span{
-        color: white;
+        color: $white;
     }
 }
 
@@ -39,11 +44,11 @@
 
 .right {
     transform: scale(1.7);
-    color: green;
+    color: $green;
 }
 
 .wrong {
     transform: scale(2.5);
-    color: red;
+    color: $red;
     padding-top: 0.2rem;
 }

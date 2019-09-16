@@ -6,8 +6,6 @@ class Answer extends React.Component {
     render() {
         const { quiz, index } = this.props;
 
-        console.log(quiz.questions[quiz.turn].correct);
-
         if (index === quiz.questions[quiz.turn].correct && quiz.selected !== null) {
             return (
                 <div className="right">

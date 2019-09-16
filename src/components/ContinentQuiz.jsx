@@ -32,7 +32,7 @@ class ContinentQuiz extends React.Component {
             .catch(() => this.setState({ fetchError: true }));
     }
 
-    loadHighScore() {
+    loadHighScore = () => {
         if (localStorage.getItem('highscore')) {
             let appState = localStorage.getItem('highscore');
             let highScore = JSON.parse(appState);
@@ -53,7 +53,6 @@ class ContinentQuiz extends React.Component {
 
     next = () => {
         let add;
-        console.log(this.state.quiz.turn);
 
         if (this.state.quiz.selected === this.state.quiz.questions[this.state.quiz.turn].correct) {
             add = this.state.quiz.score + 750;
@@ -62,7 +61,6 @@ class ContinentQuiz extends React.Component {
         }
 
         let turn = this.state.quiz.turn + 1;
-        console.log(turn);
 
         if (this.state.quiz.turn < 4) {
             this.setState({

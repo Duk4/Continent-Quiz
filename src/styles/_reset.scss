@@ -1,3 +1,6 @@
+$white: #fff;
+$blue: #0050a5;
+
 .reset {
     width: 90%;
     height: 100%;
@@ -6,7 +9,7 @@
 }
 
 .reset-icon {
-    color: blue;
+    color: $blue;
     transform: scale(5);
     margin-top: 5rem;
     margin-bottom: 3rem;
@@ -18,10 +21,10 @@
 
 .finish-btn {
     width: 80%;
-    border: 2px solid blue;
+    border: 2px solid $blue;
     border-radius: 1rem;
-    color: blue;
-    background: white;
+    color: $blue;
+    background: $white;
     margin-top: 1.5rem; 
     padding: 0.5rem;
 }

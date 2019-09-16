@@ -4,7 +4,7 @@ import Options from './Options';
 class Question extends React.Component {
     render() {
         const { quiz, clickHandler, next } = this.props;
-        console.log(quiz.questions);
+
         const picture = quiz.questions[quiz.turn].image;
 
         return (
