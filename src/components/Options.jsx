@@ -1,18 +1,6 @@
 import React from 'react';
 import Option from './Option';
 import Next from './Next';
-import DoneIcon from '@material-ui/icons/Done';
-import ClearIcon from '@material-ui/icons/Clear';
-
-const right = (<div className="right">
-    <DoneIcon />
-</div>
-);
-
-const wrong = (<div className="wrong">
-    <ClearIcon />
-</div>
-);
 
 class Options extends React.Component {
     render() {
@@ -23,11 +11,11 @@ class Options extends React.Component {
             <div>
                 {
                     options.map((option, index) =>
-                        <Option option={option} key={index} index={index} quiz={quiz} clickHandler={clickHandler} />
+                        <Option option={option} key={index} index={index} quiz={quiz} clickHandler={clickHandler} i={i} />
                     )
                 }
 
-                <Next quiz={quiz} next={next} />
+                <Next quiz={quiz} next={next} i={i} />
             </div>
         );
     }

@@ -1,9 +1,10 @@
 import React from 'react';
+import Answer from './Answer';
 import CategoryIcon from '@material-ui/icons/Category';
 
 class Option extends React.Component {
     render() {
-        const { option, index, quiz, clickHandler } = this.props;
+        const { option, index, quiz, clickHandler, i } = this.props;
 
         const className = (index === quiz.selected) ? 'option selected' : 'option';
         const clickable = (quiz.clickable === true) ? (() => clickHandler(index)) : null;
@@ -14,7 +15,9 @@ class Option extends React.Component {
                     <CategoryIcon />
                 </div>
                 <span>{option}</span>
-                <div className="answer"></div>
+                <div className="answer">
+                    <Answer quiz={quiz} index={index} i={i} />
+                </div>
             </div>
         );
     };

@@ -16,6 +16,7 @@ class ContinentQuiz extends React.Component {
                 score: 0,
                 selected: null,
                 clickable: true,
+                showNext: false,
                 showScore: false
             },
             highScore: [
@@ -53,8 +54,39 @@ class ContinentQuiz extends React.Component {
         });
     };
 
-    next = () => {
+    next = i => {
+        let add;
 
+        if (this.state.quiz.selected === this.state.quiz.questions[i].correct) {
+            add = this.state.quiz.score + 750;
+        } else {
+            add = this.state.quiz.score;
+        }
+
+        if (i < 4) {
+            this.setState({
+                showScore: {
+                    ...this.state.quiz,
+                    score: add,
+                    selected: null,
+                    clickable: true,
+                    showNext: false
+                }
+            });
+        } else {
+            this.setState({
+                showScore: {
+                    ...this.state.quiz,
+                    score: add,
+                    selected: null,
+                    clickable: true,
+                    showNext: false,
+                    showScore: true
+                }
+            });
+        }
+
+        return i++;
     };
 
     handleGameStart = () => {
