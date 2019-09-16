@@ -4,7 +4,7 @@ import Question from './Question';
 
 class Quiz extends React.Component {
     render() {
-        const { quiz, data, clickHandler } = this.props;
+        const { quiz, data, clickHandler, next } = this.props;
 
         const QUESTION_COUNT = 5;
 
@@ -22,14 +22,9 @@ class Quiz extends React.Component {
             return (
                 <div className="quiz">
                     <h3>Question {i + 1} of 5</h3>
-                    <Question data={data} quiz={quiz} i={i} clickHandler={clickHandler} />
-                    <button className="next-btn" onClick={next}>NEXT</button>
+                    <Question data={data} quiz={quiz} i={i} clickHandler={clickHandler} next={next} />
                 </div>
             );
-        };
-
-        const next = () => {
-
         };
     }
 }

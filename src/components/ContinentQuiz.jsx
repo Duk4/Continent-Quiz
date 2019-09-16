@@ -44,8 +44,17 @@ class ContinentQuiz extends React.Component {
 
     clickHandler = index => {
         this.setState({
-            selected: index
+            quiz: {
+                ...this.state.quiz,
+                selected: index,
+                clickable: false,
+                showNext: true
+            }
         });
+    };
+
+    next = () => {
+
     };
 
     handleGameStart = () => {
@@ -58,11 +67,14 @@ class ContinentQuiz extends React.Component {
 
         this.setState(state => ({
             game: null,
-            questions: [],
-            selected: null,
-            clickable: true,
-            showScore: false,
-            score: 0,
+            quiz: {
+                questions: [],
+                score: 0,
+                selected: null,
+                clickable: true,
+                showNext: false,
+                showScore: false
+            },
             highScore:
                 (_.take(
                     _.reverse(
@@ -74,8 +86,6 @@ class ContinentQuiz extends React.Component {
 
     render() {
         const { game, highScore, fetchError, quiz, data } = this.state;
-
-        console.log('selected', this.state.selected);
 
         if (game === null) {
             return (
@@ -92,6 +102,7 @@ class ContinentQuiz extends React.Component {
                     data={data}
                     quiz={quiz}
                     clickHandler={this.clickHandler}
+                    next={this.next}
                 />
             );
         } else if (quiz.showScore === true) {
