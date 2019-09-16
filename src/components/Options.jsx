@@ -14,22 +14,15 @@ const wrong = (<div className="wrong">
 );
 
 class Options extends React.Component {
-    clickHandler = index => {
-        this.setState({
-            selected: index
-        });
-        console.log(this.props);
-    };
-
     render() {
-        const { i, quiz } = this.props;
+        const { i, quiz, clickHandler } = this.props;
         const options = quiz.questions[i].options;
 
         return (
             <div>
                 {
                     options.map((option, index) =>
-                        <Option option={option} key={index} index={index} quiz={quiz} clickHandler={this.clickHandler} />
+                        <Option option={option} key={index} index={index} quiz={quiz} clickHandler={clickHandler} />
                     )
                 }
             </div>

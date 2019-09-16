@@ -42,6 +42,12 @@ class ContinentQuiz extends React.Component {
         };
     };
 
+    clickHandler = index => {
+        this.setState({
+            selected: index
+        });
+    };
+
     handleGameStart = () => {
         const game = true;
         this.setState({ game });
@@ -69,6 +75,8 @@ class ContinentQuiz extends React.Component {
     render() {
         const { game, highScore, fetchError, quiz, data } = this.state;
 
+        console.log('selected', this.state.selected);
+
         if (game === null) {
             return (
                 <Home
@@ -83,6 +91,7 @@ class ContinentQuiz extends React.Component {
                     game={game}
                     data={data}
                     quiz={quiz}
+                    clickHandler={this.clickHandler}
                 />
             );
         } else if (quiz.showScore === true) {

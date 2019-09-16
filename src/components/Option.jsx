@@ -6,6 +6,7 @@ class Option extends React.Component {
         const { option, index, quiz, clickHandler } = this.props;
 
         const className = (index === quiz.selected) ? 'option selected' : 'option';
+        console.log(quiz.selected);
 
         return (
             <div className={className} onClick={() => clickHandler(index)}>
