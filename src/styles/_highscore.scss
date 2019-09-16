@@ -2,7 +2,7 @@
     width: 90%;
     margin: 1rem auto;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -12,7 +12,8 @@
     color: green;
     border: 2px solid green;
     border-radius: 1rem;
-    padding: 0.5rem;
+    padding: 0.7rem;
+    font-weight: bold;
 }
 
 .points {
@@ -22,7 +23,7 @@
 }
 
 .date {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: grey;
     opacity: .8;
     text-align: left;

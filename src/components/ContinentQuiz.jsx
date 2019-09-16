@@ -13,17 +13,14 @@ class ContinentQuiz extends React.Component {
             game: null,
             quiz: {
                 questions: [],
+                turn: 0,
                 score: 0,
                 selected: null,
                 clickable: true,
                 showNext: false,
                 showScore: false
             },
-            highScore: [
-                { score: 2000, date: (new Date()) },
-                { score: 1500, date: (new Date()) },
-                { score: 1000, date: (new Date()) },
-            ],
+            highScore: [],
             fetchError: false
         };
 
@@ -54,19 +51,24 @@ class ContinentQuiz extends React.Component {
         });
     };
 
-    next = i => {
+    next = () => {
         let add;
+        console.log(this.state.quiz.turn);
 
-        if (this.state.quiz.selected === this.state.quiz.questions[i].correct) {
+        if (this.state.quiz.selected === this.state.quiz.questions[this.state.quiz.turn].correct) {
             add = this.state.quiz.score + 750;
         } else {
             add = this.state.quiz.score;
         }
 
-        if (i < 4) {
+        let turn = this.state.quiz.turn + 1;
+        console.log(turn);
+
+        if (this.state.quiz.turn < 4) {
             this.setState({
-                showScore: {
+                quiz: {
                     ...this.state.quiz,
+                    turn: turn,
                     score: add,
                     selected: null,
                     clickable: true,
@@ -75,7 +77,7 @@ class ContinentQuiz extends React.Component {
             });
         } else {
             this.setState({
-                showScore: {
+                quiz: {
                     ...this.state.quiz,
                     score: add,
                     selected: null,
@@ -85,35 +87,47 @@ class ContinentQuiz extends React.Component {
                 }
             });
         }
-
-        return i++;
     };
 
     handleGameStart = () => {
         const game = true;
         this.setState({ game });
+
+        const QUESTION_COUNT = 5;
+
+        for (let i = 0; i < QUESTION_COUNT; i++) {
+            const continents = _.uniq(_.sortBy(_.map(this.state.data, 'continent')));
+            const choices = _.sampleSize(continents, 3);
+            const correctAnswer = _.random(2);
+
+            this.state.quiz.questions.push({
+                options: choices,
+                correct: correctAnswer,
+                image: _.sample(_.filter(this.state.data, { continent: choices[correctAnswer] })).image
+            });
+        };
     };
 
     handleGameFinish = (score) => {
         const lastScore = { date: new Date(), score };
+        const highScore = _.take(_.reverse(_.sortBy([...this.state.highScore, lastScore], 'score')), 3);
 
-        this.setState(state => ({
+        this.setState({
             game: null,
             quiz: {
                 questions: [],
+                turn: 0,
                 score: 0,
                 selected: null,
                 clickable: true,
                 showNext: false,
                 showScore: false
             },
-            highScore:
-                (_.take(
-                    _.reverse(
-                        _.sortBy([...state.highScore, lastScore], 'score')
-                    ), 3
-                ))
-        }))
+            highScore
+        })
+
+        let appState = JSON.stringify(highScore);
+        localStorage.setItem('highscore', appState);
     }
 
     render() {

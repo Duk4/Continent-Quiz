@@ -4,18 +4,18 @@ import Next from './Next';
 
 class Options extends React.Component {
     render() {
-        const { i, quiz, clickHandler, next } = this.props;
-        const options = quiz.questions[i].options;
+        const { quiz, clickHandler, next } = this.props;
+        const options = quiz.questions[quiz.turn].options;
 
         return (
             <div>
                 {
                     options.map((option, index) =>
-                        <Option option={option} key={index} index={index} quiz={quiz} clickHandler={clickHandler} i={i} />
+                        <Option option={option} key={index} index={index} quiz={quiz} clickHandler={clickHandler} />
                     )
                 }
 
-                <Next quiz={quiz} next={next} i={i} />
+                <Next quiz={quiz} next={next} />
             </div>
         );
     }

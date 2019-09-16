@@ -2,11 +2,11 @@ import React from 'react';
 
 class Next extends React.Component {
     render() {
-        const { quiz, next, i } = this.props;
+        const { quiz, next } = this.props;
 
         if (quiz.showNext === true) {
             return (
-                <button className="next-btn" onClick={() => next(i)}>NEXT</button>
+                <button className="next-btn" onClick={() => next()}>NEXT</button>
             );
         }
 
