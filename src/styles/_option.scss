@@ -11,6 +11,11 @@
     justify-content: space-between;
 }
 
+.selected {
+    background: orange;
+    color: white;
+}
+
 .option .category {
     flex-basis: 0;
     flex-grow: 1;

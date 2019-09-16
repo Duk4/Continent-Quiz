@@ -13,8 +13,9 @@ class ContinentQuiz extends React.Component {
             game: null,
             quiz: {
                 questions: [],
-                currentQuestion: 1,
                 score: 0,
+                selected: null,
+                clickable: true,
                 showScore: false
             },
             highScore: [
@@ -52,7 +53,8 @@ class ContinentQuiz extends React.Component {
         this.setState(state => ({
             game: null,
             questions: [],
-            currentQuestion: 1,
+            selected: null,
+            clickable: true,
             showScore: false,
             score: 0,
             highScore:
@@ -95,17 +97,3 @@ class ContinentQuiz extends React.Component {
 };
 
 export default ContinentQuiz;
-
-// const continents = _.uniq(_.sortBy(_.map(this.state.data, 'continent')));
-// const choices = _.sampleSize(continents, 3);
-// const correctAnswer = _.random(3);
-
-// const QUESTION_COUNT = 5;
-// for (let i = 0; i < QUESTION_COUNT; i++) {
-
-//     this.state.quiz.questions.push({
-//         options: choices,
-//         correct: correctAnswer,
-//         image: _.sample(_.filter(this.state.data, { continent: choices[correctAnswer] })).image
-//     });
-// }

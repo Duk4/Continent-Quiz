@@ -1,16 +1,15 @@
 import React from 'react';
-import Option from './Option';
+import Options from './Options';
 
 class Question extends React.Component {
     render() {
-        const { data, quiz } = this.props;
-
-
+        const { i, quiz } = this.props;
+        const picture = quiz.questions[i].image;
 
         return (
             <div className="question">
-                <div className="image"></div>
-                <Option quiz={quiz} />
+                <div className="image" style={{ backgroundImage: `url(${picture})` }}></div>
+                <Options quiz={quiz} i={i} />
             </div>
         );
     }
