@@ -5,6 +5,7 @@ import Quiz from './Quiz';
 import Reset from './Reset';
 
 class ContinentQuiz extends React.Component {
+    _isMounted = false;
     constructor(props) {
         super(props)
 
@@ -24,21 +25,33 @@ class ContinentQuiz extends React.Component {
             fetchError: false
         };
 
-        this.loadHighScore();
-
         fetch('https://api.myjson.com/bins/a6da9')
             .then(response => response.json())
             .then(data => this.setState({ data }))
             .catch(() => this.setState({ fetchError: true }));
     }
 
-    loadHighScore = () => {
-        if (localStorage.getItem('highscore')) {
-            let appState = localStorage.getItem('highscore');
-            let highScore = JSON.parse(appState);
-            this.setState({ highScore });
-        };
-    };
+    loadHighScore;
+
+    componentDidMount() {
+        console.log('mounted');
+        this._isMounted = true;
+        if (this._isMounted === true) {
+            console.log('????????');
+            this.loadHighScore = () => {
+                console.log('what')
+                if (localStorage.getItem('highscore')) {
+                    let appState = localStorage.getItem('highscore');
+                    let highScore = JSON.parse(appState);
+                    this.setState({ highScore });
+                };
+            };
+        }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
 
     clickHandler = index => {
         this.setState({
