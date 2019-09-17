@@ -25,32 +25,17 @@ class ContinentQuiz extends React.Component {
             fetchError: false
         };
 
+        const highScoreStr = localStorage.getItem('highscore');
+        try {
+            if (highScoreStr) this.state.highScore = JSON.parse(highScoreStr);
+        } catch (e) {
+            this.state.highScore = []
+        }
+
         fetch('https://api.myjson.com/bins/a6da9')
             .then(response => response.json())
             .then(data => this.setState({ data }))
             .catch(() => this.setState({ fetchError: true }));
-    }
-
-    loadHighScore;
-
-    componentDidMount() {
-        console.log('mounted');
-        this._isMounted = true;
-        if (this._isMounted === true) {
-            console.log('????????');
-            this.loadHighScore = () => {
-                console.log('what')
-                if (localStorage.getItem('highscore')) {
-                    let appState = localStorage.getItem('highscore');
-                    let highScore = JSON.parse(appState);
-                    this.setState({ highScore });
-                };
-            };
-        }
-    }
-
-    componentWillUnmount() {
-        this._isMounted = false;
     }
 
     clickHandler = index => {
