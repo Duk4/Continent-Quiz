@@ -5,7 +5,6 @@ import Quiz from './Quiz';
 import Reset from './Reset';
 
 class ContinentQuiz extends React.Component {
-    _isMounted = false;
     constructor(props) {
         super(props)
 
