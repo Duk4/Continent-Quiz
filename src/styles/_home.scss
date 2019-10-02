@@ -29,10 +29,11 @@ $white: #fff;
     border-radius: 1rem;
     color: $white;
     background: $blue;
-}
-
-.home-icon:hover{
     cursor: pointer;
+    &:hover {
+        color: $blue;
+        background: $white;
+    }
 }
 
 .play-btn {
@@ -43,12 +44,11 @@ $white: #fff;
     border-radius: 1rem;
     color: $green;
     background: $white;
-}
-
-.play-btn:hover {
-    color: $white;
-    background: $green;
     cursor: pointer;
+    &:hover {
+        color: $white;
+        background: $green;
+    }
 }
 
 .category{
