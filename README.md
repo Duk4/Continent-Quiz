@@ -1,4 +1,4 @@
-# Mobile only.
+# Mobile first approach. Responsive design.
 
 Guess the continent on the picture! 33% chance that you'll get it right...
 
