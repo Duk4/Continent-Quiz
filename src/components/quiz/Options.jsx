@@ -7,7 +7,7 @@ const Options = (props) => {
     const options = quiz.questions[quiz.turn].options;
 
     return (
-        <div>
+        <div className="options">
             {
                 options.map((option, index) =>
                     <Option option={option} key={index} index={index} quiz={quiz} clickHandler={clickHandler} />
