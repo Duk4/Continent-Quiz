@@ -3,6 +3,14 @@
         text-align: center;
     }
 
+    .points {
+        flex-grow: 10;
+    }
+
+    .home-icon {
+        visibility: hidden;
+    }
+
     .image {
         height: 50vh;
     }
