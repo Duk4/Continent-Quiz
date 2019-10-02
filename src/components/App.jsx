@@ -1,7 +1,7 @@
 import React from 'react';
 import ContinentQuiz from './ContinentQuiz';
 
-function App() {
+const App = () => {
     return (
         <div className="app">
             <h5>CONTINENT QUIZ</h5>

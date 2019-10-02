@@ -1,8 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
-import Home from './Home';
-import Quiz from './Quiz';
-import Reset from './Reset';
+import Home from './home/Home';
+import Quiz from './quiz/Quiz';
+import Reset from './finish/Reset';
 
 class ContinentQuiz extends React.Component {
     constructor(props) {

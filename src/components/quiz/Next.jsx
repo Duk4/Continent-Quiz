@@ -1,8 +1,7 @@
 import React from 'react';
 
-class Next extends React.Component {
-    render() {
-        const { quiz, next } = this.props;
+const Next = (props) => {
+        const { quiz, next } = props;
 
         if (quiz.showNext === true) {
             return (
@@ -11,7 +10,6 @@ class Next extends React.Component {
         }
 
         return null;
-    }
 }
 
 export default Next;
