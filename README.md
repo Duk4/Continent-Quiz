@@ -3,3 +3,6 @@
 Guess the continent on the picture! 33% chance that you'll get it right...
 
 ![Imgur](https://i.imgur.com/OLuFsJK.png)
+
+
+### API was removed so the app doesn't work anymore
